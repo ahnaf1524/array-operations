@@ -1,7 +1,8 @@
 # Types of Operation in an array
-- Insert
-- Delete
-- Update
-- Copy
-- Simple Sorting (Bubble Sort)
-- Reverse
+- Insert (Later)
+- Delete (Later)
+- Update (Done)
+- Copy (Done)
+- Simple Sorting (Bubble Sort) (Done)
+- Reverse (Done)
+## Keep mind cool and try to understand

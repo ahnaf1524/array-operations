@@ -1,0 +1,11 @@
+# Ignore the .vscode folder
+.vscode/
+
+# Ignore all .exe files
+*.exe
+
+# Ignore input.txt and output.txt
+input.txt
+output.txt
+create_files.cpp
+tempCodeRunnerFile.cpp

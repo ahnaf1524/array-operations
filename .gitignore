@@ -1,9 +1,9 @@
 # Ignore the .vscode folder
 .vscode/
 
-# Ignore all .exe files
+# Ignore all .exe , .out files
 *.exe
-
+*.out
 # Ignore input.txt and output.txt
 input.txt
 output.txt

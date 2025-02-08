@@ -1,25 +1,41 @@
 #include <iostream>
+#define endl '\n'
 using namespace std;
 int main()
 {
-    // taking size and array elements from user
     int n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; ++i)
+    // handle some case
+    if(n < 0)
+    {
+        cout << "Array Length Must be positive." << endl;
+        return 1;
+    }
+    int *arr = new int[n];
+    for(int i = 0; i < n; ++i)
     {
         cin >> arr[i];
     }
-    // new array which copy actual one
-    int arr_copy[n];
-    // copy operation
-    for (int i = 0; i < 5; ++i)
+    int *cpy_arr = new int[n];
+    for(int i = 0; i < n; ++i)
     {
-        arr_copy[i] = arr[i];
+        cpy_arr[i] = arr[i];
     }
-    // print copied array
-    for (int i = 0; i < 5; ++i)
+    cout << "Original Array : " << endl;
+    // print the original array
+    for(int i = 0; i < n; ++i)
     {
-        cout << arr_copy[i] << endl;
+        cout << arr[i] << " ";
     }
+    // Print the copied array
+    cout << "Copied Array : " << endl;
+    for(int i = 0; i < n; ++i)
+    {
+        cout << cpy_arr[i] << " ";
+    }
+    // free up the
+    delete[] arr;
+    delete[] cpy_arr;
+
+    return 0;
 }

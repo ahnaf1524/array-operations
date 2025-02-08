@@ -1,26 +1,33 @@
 #include <iostream>
+#define endl '\n'
 using namespace std;
 int main()
 {
-    // take value from user wanna to find
-    int value, found = -1;
-    cin >> value;
-    int arr[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; ++i)
+    int n;
+    cin >> n;
+    int *arr = new int[n];
+    for(int i = 0; i < n; ++i)
     {
-        if (arr[i] == value)
+        cin >> arr[i];
+    }
+    int target , found = -1;
+    cin >> target;
+    for(int i = 0; i < n; ++i)
+    {
+        if(arr[i] == target)
         {
             found = i;
             break;
         }
     }
-    if (found != -1)
+    if(found != -1)
     {
-        cout << "Found at index " << found << endl;
+        cout << target << " found at " << found << endl; 
     }
     else
     {
-        cout << "Not found" << endl;
+        cout << target << " not found in the array" << endl;
     }
+    delete[] arr;
     return 0;
 }

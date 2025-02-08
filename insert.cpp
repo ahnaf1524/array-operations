@@ -1,35 +1,30 @@
-#include<iostream>
-#include <stdio.h>
+#include <iostream>
+#define endl '\n'
+using namespace std;
 int main()
 {
     int n;
-    scanf("%d", &n); 
-    int ar[n + 1]; // Create an array of size n+1 to accommodate insertion
-
-    // Input the elements of the array
-    for (int i = 0; i < n; i++)
+    cin >> n;
+    int *arr = new int[n + 1]; // 1 for extra space
+    // input the array
+    for(int i = 0; i < n; ++i)
     {
-        scanf("%d", &ar[i]);
+        cin >> arr[i];
     }
-
-    int pos, val;
-    // Read the position and value to insert
-    scanf("%d %d", &pos, &val);
-
-    // Shift elements to the right from the position of insertion
-    for (int i = n; i >= pos + 1; i--)
+    int pos , value;
+    cin >> pos >> value;
+    // insertion loops (shift element right from the insertion)
+    for(int i = n; i >= pos; --i)
     {
-        ar[i] = ar[i - 1];
+        arr[i] = arr[i - 1]; // just create space
     }
-
-    // Insert the new value at the specified position
-    ar[pos] = val;
-
-    // Print the updated array
-    for (int i = 0; i <= n; i++)
+    // insert the new value
+    arr[pos] = value;
+    // print the array
+    for(int i = 0; i < n + 1; ++i)
     {
-        printf("%d ", ar[i]);
+        cout << arr[i] << " ";
     }
-
+    delete[] arr;
     return 0;
 }

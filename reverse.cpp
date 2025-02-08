@@ -1,25 +1,39 @@
+/*ahnaf_cp*/
 #include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+#define endl '\n'
 using namespace std;
-int main()
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double ld;
+// utility functions
+void input(int arr[] , int n)
 {
-    // taking size and array elements from user
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; ++i)
+    for(int i = 0; i < n; ++i)
     {
         cin >> arr[i];
     }
-    // print the array elements (before reverse)
-    for (int i = 0; i < n; ++i)
+}
+void print(int arr[] , int n)
+{
+    for(int i = 0; i < n; ++i)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
-    // actual logic below
-    int start = 0,
-        end = n - 1;
-    while (start < end)
+}
+void solver(void)
+{
+    int n;
+    cin >> n;
+    int *arr = new int[n];
+    input(arr , n);
+    cout << "Before Reverse : " << endl;
+    print(arr , n);
+    int start = 1 , end = n - 1;
+    while(start < end)
     {
         int temp = arr[start];
         arr[start] = arr[end];
@@ -27,10 +41,15 @@ int main()
         start++;
         end--;
     }
-    // print the array elements
-    for (int i = 0; i < n; ++i)
-    {
-        cout << arr[i] << " ";
-    }
+    cout << "After Reverse : " << endl;
+    print(arr , n);
+    delete[] arr;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    solver();
     return 0;
 }
